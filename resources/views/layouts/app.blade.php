@@ -57,7 +57,12 @@
                                 <img src="https://us.123rf.com/450wm/kraft2727/kraft27271412/kraft2727141200018/34583214-logo-admin-icon-administrator-illustration-of-a-man-in-a-jacket-and-shirt-ties-jacket-and-shirt-.jpg?ver=6"
                                      class="user-image" alt="User Image"/>
                                 <!-- hidden-xs hides the username on small devices so only the image appears. -->
-                                <span class="hidden-xs">{!! Auth::user()->name !!}</span>
+                                <span class="hidden-xs">{!! Auth::user()->name !!}</span><br> 
+								  @foreach(Auth::user()->unreadNotifications as $notification )
+                                <span class="hidden-xs">{!! $notification->data['data'] !!}</span>
+								<?php       $notification->markAsRead(); ?>
+								 @endforeach
+								 {{ count(Auth::user()->unreadNotifications  )}}
                             </a>
                             <ul class="dropdown-menu">
                                 <!-- The user image in the menu -->
@@ -161,5 +166,29 @@ Admin                </a>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
 
     @yield('scripts')
+	    <script src="{{ asset('StreamLab/StreamLab.js') }} "></script>
+
+	 <script>
+        var message, ShowDiv = $('#showNofication'), count = $('#count'), c;
+        var slh = new StreamLabHtml();
+        var sls = new StreamLabSocket({
+            appId:"{{ config('stream_lab.app_id') }}",
+            channelName:"test",
+            event:"*"
+        });
+        sls.socket.onmessage = function(res){
+            slh.setData(res);
+            if(slh.getSource() === 'messages'){
+                c = parseInt(count.html());
+                count.html(c+1);
+                message  = slh.getMessage();
+                ShowDiv.prepend('<li><a href="" class="unread">'+message+'</a></li>');
+            }
+        }
+      
+    </script>
+
+
+ 
 </body>
 </html>

@@ -7,7 +7,11 @@ use App\Http\Requests\UpdateSERVICERequest;
 use App\Repositories\SERVICERepository;
 use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
+use Illuminate\Notifications\Notifiable;
+use App\Notifications\figoname;
+
 use Flash;
+use App\User;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
 
@@ -79,8 +83,11 @@ class SERVICEController extends AppBaseController
 	   
  
         $sERVICE = $this->sERVICERepository->create($input);
-		
+		$users= User::all();
+		$post= User::find(1);
+\Notification::send($users, new figoname($post));
 
+		
         Flash::success('S E R V I C E saved successfully.');
 
         return redirect(route('sERVICES.index'));
