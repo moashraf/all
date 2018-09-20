@@ -4,8 +4,7 @@
         <th>Title</th>
         
         <th>Single Photo</th>
-        <th>Lang</th>
-        
+         
        <th colspan="3">Action</th>
         </tr>
     </thead>
@@ -16,8 +15,7 @@
         
              <td>     <img src="{{ URL::to('/').'/images/'.$slider->single_photo}}"  width="50" height="50">  </td>
              
-             <td>{!! $slider->lang !!}</td>
-
+ 
             <td>
                 {!! Form::open(['route' => ['sliders.destroy', $slider->id], 'method' => 'delete']) !!}
                 <div class='btn-group'>

@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 use Flash;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
-
+use App\Models\Categories_Products;
 class Categories_ProductsController extends AppBaseController
 {
     /** @var  Categories_ProductsRepository */
@@ -43,8 +43,10 @@ class Categories_ProductsController extends AppBaseController
      */
     public function create()
     {
-        return view('categories__products.create');
-    }
+        $cat = Categories_Products::all();
+        return view('categories__products.create')
+        ->with('cat', $cat);
+     }
 
     /**
      * Store a newly created Categories_Products in storage.

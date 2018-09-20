@@ -3,15 +3,23 @@
     {!! Form::label('title', 'Title:') !!}
     {!! Form::text('title', null, ['class' => 'form-control']) !!}
 </div>
-
-
-<!-- Lang Field -->
+ 
+ 
+ 
+ 
+<!-- cat_id Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('lang', 'lang:') !!}
-    {!! Form::select('lang', ['en' => 'en', 'ar' => 'ar'], null, ['class' => 'form-control']) !!}
-</div>
+    {!! Form::label('cat_id', 'cat:') !!}
+    <select name="cat_id" class="form-control">
+        @foreach($cat as $category)
+            <option value="{{$category->id}}"> {{$category->title}} </option>
+        @endforeach
+    </select>
 
-
+ </div>
+ 
+ 
+ 
 <div class="clearfix"></div>
 
 <!-- Single Photo Field -->

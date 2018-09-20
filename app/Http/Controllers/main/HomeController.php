@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
  use App\Models\Categories_Products;
+use App\Models\SERVICE;
 use App\Models\slider;
-use App\Models\clients;
-use App\Models\Products;
+use App\Models\projects_cat;
+
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -56,18 +57,64 @@ class HomeController extends Controller
      */
     public function index()
     {
- $Categories_Products = Categories_Products::limit(10)->get();
- $Products = Products::limit(25)->get();
- $clients = clients::limit(20)->get();
- $slider = slider::limit(8)->get();
+ 
+ $SERVICE = SERVICE::limit(12)->get();
 		 return view('main.index',
             [
-                 'clients' => $clients,
-                 'Products' => $Products,
-                 'Categories_Products' => $Categories_Products,
-                 'slider' => $slider,
+                 'SERVICE' => $SERVICE 
             ]);
     }
+	
+	
+	 public function About()
+    {
+ 
+ $SERVICE = SERVICE::limit(12)->get();
+		 return view('main.about',
+            [
+                 'SERVICE' => $SERVICE 
+            ]);
+    }
+	
+	 public function Contact()
+    {
+ 
+ $SERVICE = SERVICE::limit(12)->get();
+		 return view('main.contact',
+            [
+                 'SERVICE' => $SERVICE 
+            ]);
+    }
+	
+	
+	
+	
+	  public function projects()
+    {
+       $Categories_Products = projects_cat::limit(50)->get();
+
+ $projects = slider::limit(40)->get();
+		 return view('main.all_projects',
+            [
+			             'Categories_Products' => $Categories_Products, 
+
+                 'projects' => $projects 
+            ]);
+    }
+	
+	
+	
+	
+	public function services()
+    {
+ 
+ $SERVICE = SERVICE::limit(50)->get();
+		 return view('main.all_services',
+            [
+                 'SERVICE' => $SERVICE 
+            ]);
+    }
+	
 
     /**
      * Show the form for creating a new resource.

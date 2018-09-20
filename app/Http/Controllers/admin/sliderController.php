@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Flash;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
+use App\Models\projects_cat;
 
 class sliderController extends AppBaseController
 {
@@ -42,9 +43,10 @@ class sliderController extends AppBaseController
      * @return Response
      */
     public function create()
-    {
-        return view('sliders.create');
-    }
+    {$cat = projects_cat::all();
+        return view('sliders.create')
+        ->with('cat', $cat);
+     }
 
     /**
      * Store a newly created slider in storage.

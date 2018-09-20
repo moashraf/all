@@ -26,6 +26,8 @@ class slider extends Model
 
     public $fillable = [
         'lang',
+        'cat_id',
+		
         'single_photo',
         'title'
     ];
@@ -47,7 +49,6 @@ class slider extends Model
      * @var array
      */
     public static $rules = [
-        'lang' => 'required',
         'single_photo' => 'min:1|mimes:jpeg,jpg,png,gif',
         'title' => 'required'
     ];

@@ -16,6 +16,19 @@
 </div>
 
 
+<!-- cat_id Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('parentid', 'cat:') !!}
+    <select name="parentid" class="form-control">
+        @foreach($cat as $category)
+            <option  
+			style="<?php  if($category->parentid ==  0 ){    echo'color: #dd4b39;  font-weight: bold;' ;} ?>  "
+	value="{{$category->id}}">  {{$category->title}} </option>
+        @endforeach
+    </select>
+
+ </div>
+ 
 <!-- Single Photo Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('single_photo', 'Single Photo:') !!}

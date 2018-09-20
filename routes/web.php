@@ -15,7 +15,11 @@
  
 Route::resource('/', 'HomeController');
 Route::post('/form', 'HomeController@form');
-  Route::resource('/all_products', 'ProductController');
+Route::resource('/all_products', 'ProductController');
+Route::get('/services', 'HomeController@services');
+Route::get('/projects', 'HomeController@projects');
+Route::get('/About', 'HomeController@About');
+Route::get('/Contact', 'HomeController@Contact');
 
 Auth::routes();
  
@@ -36,14 +40,12 @@ Route::resource('products', 'ProductsController');
 Route::resource('categoriesProducts', 'Categories_ProductsController');
 Route::resource('siteStings', 'siteStingsController');
 Route::resource('sliders', 'sliderController');
-
-
+Route::resource('types', 'typesController');
+Route::resource('sERVICES', 'SERVICEController');
+Route::resource('nEWS', 'NEWSController');
+Route::resource('clients', 'clientsController');
+Route::resource('orders', 'orderController');
+Route::resource('projectsCats', 'projects_catController');
 });
 
-Route::resource('types', 'typesController');
 
-Route::resource('sERVICES', 'SERVICEController');
-
-Route::resource('nEWS', 'NEWSController');
-
-Route::resource('clients', 'clientsController');

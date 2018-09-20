@@ -3,12 +3,7 @@
     {!! Form::label('id', 'Id:') !!}
     <p>{!! $slider->id !!}</p>
 </div>
-
-<!-- Lang Field -->
-<div class="form-group">
-    {!! Form::label('lang', 'Lang:') !!}
-    <p>{!! $slider->lang !!}</p>
-</div>
+ 
 
 <!-- Single Photo Field -->
 <div class="form-group">

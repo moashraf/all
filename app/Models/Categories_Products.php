@@ -30,6 +30,8 @@ class Categories_Products extends Model
         'title',
         'slug',
         'lang',
+        'parentid',
+		
         'single_photo',
         'body'
     ];
@@ -61,4 +63,14 @@ class Categories_Products extends Model
     ];
 
     
+	
+public function parent_category() {
+        return $this->belongsTo(self::class, 'parentid', 'id');
+    }
+
+    public function children() {
+        return $this->hasMany(self::class, 'parentid');
+    }
+	
+	
 }

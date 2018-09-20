@@ -3,8 +3,7 @@
 @section('content')
     <section class="content-header">
         <h1>
-            Slider
-        </h1>
+projects        </h1>
    </section>
    <div class="content">
        @include('adminlte-templates::common.errors')
