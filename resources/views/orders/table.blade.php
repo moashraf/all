@@ -6,6 +6,8 @@
         <th>Email</th>
         <th>Phone</th>
         <th>Status</th>
+        <th>quantity</th>
+		
         <th>Product</th>
             <th colspan="3">Action</th>
         </tr>
@@ -18,7 +20,8 @@
             <td>{!! $order->email !!}</td>
             <td>{!! $order->phone !!}</td>
             <td>{!! $order->status !!}</td>
-            <td>{!! $order->product !!}</td>
+            <td>{!! $order->quantity !!}</td>
+            <td>{!! $order->get_Product['name'] !!}</td>
             <td>
                 {!! Form::open(['route' => ['orders.destroy', $order->id], 'method' => 'delete']) !!}
                 <div class='btn-group'>

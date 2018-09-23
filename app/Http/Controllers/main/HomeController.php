@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use App\Models\SERVICE;
 use App\Models\slider;
 use App\Models\projects_cat;
+use App\Models\order;
 
 use Illuminate\Http\Request;
 
@@ -21,10 +22,22 @@ class HomeController extends Controller
     public function done()
     {
      
-       return view('main.th');
+       return view('main.thankspage');
     }
 
 
+	
+	public function Cart_information_save( request $request)
+    {
+        $input = $request->all();
+
+        $order = order::create($input);
+
+ 
+        return redirect(route('done'));
+    }
+	
+	
     public function  form(Request $request) 
     {
 

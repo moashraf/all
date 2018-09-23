@@ -52,8 +52,10 @@
 									 <li class="list-group-item d-flex justify-content-between align-items-center">
                                        Add to Cart
                                        <span class="badge badge-primary badge-pill">
-                                         <a href=""><img src="{{ URL::to('/')}}/images/cart.png"></a>
+                                         <a href=""></a>
                                        </span>
+									     <button type="button" class="btn btn-  btn-lg" data-toggle="modal" data-target="#myModal"> <img src="{{ URL::to('/')}}/images/cart.png">    </button>
+
                                    </li>
                                 </ul>
                             </div>
@@ -99,6 +101,67 @@
         </div>
     </section>  
   
-        
+       
+	   
+	   
+
+<div class="container">
+   <!-- Trigger the modal with a button -->
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title"> Order information   </h4>
+        </div>
+        <div class="modal-body">
+          <div class="contact_grid_right">
+ 					{!! Form::open( [ 'route' =>  'Cart_information_save', 'method' => 'post'] ) !!}
+
+                        <div class="row contact_left_grid">
+                            <div class="col-md-6 con-left">
+                                <div class="form-group">
+                                    <label class="my-2">Name</label>
+                                    <input class="form-control" type="text" name="title" placeholder="" required="">
+                                    <input class="form-control" type="hidden" name="product"  value="{{  $Products->id }}">
+                                    <input class="form-control" type="hidden" name="quantity"  value="1">
+                                    <input class="form-control" type="hidden" name="status"  value="order">
+									
+                                </div>
+                                <div class="form-group">
+                                    <label>Email</label>
+                                    <input class="form-control" type="email" name="email" placeholder="" required="">
+                                </div>
+                                <div class="form-group">
+                                    <label class="my-2">phone</label>
+                                    <input class="form-control" type="text" name="phone" placeholder="" required="">
+                                </div>
+                            </div>
+                            <div class="col-md-6 con-right">
+                                <div class="form-group">
+                                    <label>Message</label>
+                                    <textarea name="body"  id="textarea" placeholder="" required=""></textarea>
+                                </div>
+                                <input class="form-control" type="submit" value="Submit">
+                            </div>
+                        </div>
+{!! Form::close() !!}
+                </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
+
+
 @endsection
 

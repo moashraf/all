@@ -24,3 +24,4 @@
     <a href="{!! route('projectsCats.index') !!}"><i class="fa fa-edit"></i><span>Projects Cats</span></a>
 </li>
 
+ 

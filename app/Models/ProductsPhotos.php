@@ -26,7 +26,7 @@ class  ProductsPhotos extends Model
 {
     use SoftDeletes;
 
-    public $table = 'ProductsPhotos';
+    public $table = 'productsphotos';
     
 
     protected $dates = ['deleted_at'];

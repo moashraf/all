@@ -14,12 +14,14 @@
 
  
 Route::resource('/', 'HomeController');
-Route::post('/form', 'HomeController@form');
+//Route::post('/form', 'HomeController@form');
 Route::resource('/all_products', 'ProductController');
 Route::get('/services', 'HomeController@services');
 Route::get('/projects', 'HomeController@projects');
 Route::get('/About', 'HomeController@About');
 Route::get('/Contact', 'HomeController@Contact');
+Route::post('/Cart_information_save', 'HomeController@Cart_information_save')->name('Cart_information_save');
+Route::get('/done', 'HomeController@done')->name('done');
 
 Auth::routes();
  
@@ -33,7 +35,7 @@ Auth::routes();
 Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function ()
 {
 
-Route::get('ajax_del_products/{id}/{Product_id}', 'ProductsController@ajax_del_products');
+//Route::get('ajax_del_products/{id}/{Product_id}', 'ProductsController@ajax_del_products');
 	
 Route::resource('/', 'ProductsController');
 Route::resource('products', 'ProductsController');
@@ -46,6 +48,9 @@ Route::resource('nEWS', 'NEWSController');
 Route::resource('clients', 'clientsController');
 Route::resource('orders', 'orderController');
 Route::resource('projectsCats', 'projects_catController');
+Route::resource('requests', 'requestController');
 });
+
+
 
 

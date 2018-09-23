@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 20, 2018 at 04:44 PM
+-- Generation Time: Sep 23, 2018 at 01:41 PM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 7.1.13
 
@@ -113,7 +113,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (7, '2018_04_05_115932_products_photos', 1),
 (8, '2018_09_18_102950_create_notifications_table', 2),
 (9, '2018_09_19_114203_create_orders_table', 3),
-(10, '2018_09_19_114641_create_projects_cats_table', 4);
+(10, '2018_09_19_114641_create_projects_cats_table', 4),
+(11, '2018_09_23_084724_create_requests_table', 5);
 
 -- --------------------------------------------------------
 
@@ -171,6 +172,7 @@ CREATE TABLE `n_e_w_s` (
 
 CREATE TABLE `orders` (
   `id` int(10) UNSIGNED NOT NULL,
+  `quantity` int(199) DEFAULT NULL,
   `title` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `body` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -186,11 +188,19 @@ CREATE TABLE `orders` (
 -- Dumping data for table `orders`
 --
 
-INSERT INTO `orders` (`id`, `title`, `body`, `email`, `phone`, `status`, `product`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'dfds', 'sfdgfdg', 'dfgf@dfgfsg.fdgfjhbk', '0145646546', 'gfdg', '125', '2018-09-20 07:10:26', '2018-09-20 07:11:12', NULL),
-(2, 'sdfd', 'sfdsf', 'figoashraf@gmail.com', '10913556457842', 'dfgdf', '67657', '2018-09-20 07:10:47', '2018-09-20 07:10:47', NULL),
-(3, 'dfds', 'sfdgfdg', 'dfgf@dfgfsg.fdgf', '0145646546', 'gfdg', '125', '2018-09-20 07:10:26', '2018-09-20 07:10:26', NULL),
-(4, 'sdfd', 'sfdsf', 'figoashraf@gmail.com', '10913556457842', 'dfgdf', '67657', '2018-09-20 07:10:47', '2018-09-20 07:10:47', NULL);
+INSERT INTO `orders` (`id`, `quantity`, `title`, `body`, `email`, `phone`, `status`, `product`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, NULL, 'dfds', 'sfdgfdg', 'dfgf@dfgfsg.fdgfjhbk', '0145646546', 'gfdg', '125', '2018-09-20 07:10:26', '2018-09-20 07:11:12', NULL),
+(2, NULL, 'sdfd', 'sfdsf', 'figoashraf@gmail.com', '10913556457842', 'dfgdf', '67657', '2018-09-20 07:10:47', '2018-09-20 07:10:47', NULL),
+(3, NULL, 'dfds', 'sfdgfdg', 'dfgf@dfgfsg.fdgf', '0145646546', 'gfdg', '125', '2018-09-20 07:10:26', '2018-09-20 07:10:26', NULL),
+(4, NULL, 'sdfd', 'sfdsf', 'figoashraf@gmail.com', '10913556457842', 'dfgdf', '67657', '2018-09-20 07:10:47', '2018-09-20 07:10:47', NULL),
+(5, 1, 'dasfdsf', 'dsftrdsg', 'mapso@mapso.com', '1091357842', 'order', '27', '2018-09-23 07:46:55', '2018-09-23 07:46:55', NULL),
+(6, 1, 'dasfdsf', 'dsftrdsg', 'mapso@mapso.com', '1091357842', 'order', '27', '2018-09-23 07:47:09', '2018-09-23 07:47:09', NULL),
+(7, 1, 'dasfdsf', 'dsftrdsg', 'mapso@mapso.com', '1091357842', 'order', '27', '2018-09-23 07:47:35', '2018-09-23 07:47:35', NULL),
+(8, 1, 'dasfdsf', 'nbhg', 'figoashraf@gmail.com', '1091357842', 'order', '29', '2018-09-23 08:21:38', '2018-09-23 08:21:38', NULL),
+(9, 1, 'dasfdsf', 'dfgds', 'figoashraf@gmail.com', '1091357842', 'status', 'product', '2018-09-23 08:56:28', '2018-09-23 08:56:28', NULL),
+(10, 1, 'dasfdsf', 'yti', 'nwhite@yahoo.com', '1091357842', 'status', 'product', '2018-09-23 08:58:21', '2018-09-23 08:58:21', NULL),
+(11, 1, 'fg', 'retert', 'figoashraf@gmail.com', '1091357842', 'order', '28', '2018-09-23 09:24:52', '2018-09-23 09:24:52', NULL),
+(12, 1, 'dasfdsf', 'tuy', 'nwhite@yahoo.com', '1091357842', 'Message', 'product', '2018-09-23 09:25:19', '2018-09-23 09:25:19', NULL);
 
 -- --------------------------------------------------------
 
@@ -235,7 +245,7 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `Material`, `Dimentions`, `Colors`, `name`, `body`, `single_photo`, `component`, `Net_weight`, `Note`, `Packing_content`, `cat_id`, `lang`, `slug`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(26, NULL, 'hnjk', NULL, 'asdfsdf erfdf', 'Et quas ab et magni blanditiis. Aut exercitationem iste in quia et eum.Et quas ab et magni blanditiis. Aut exercitationem iste in quia et eum.Et quas ab et magni blanditiis. Aut exercitationem iste in quia et eum.Et quas ab et magni blanditiis. Aut exercitationem iste in quia et eum.', '1718010453charge.jpg', 'Voluptates corporis quo iEt quas ab et magni blanditiis. Aut exercitationem iste in quia et eum.psam ratione debitis quo et voluptate. Blanditiis quia quis officiis.', '161', 'vel', 'Aut ullam enim est. Eos qui qui non molestias sit. Aperiam ut a ad sit a.', 28, 'ar', 'vel-enim-tenetur-voluptas-ut-facilis', '2018-04-05 13:22:06', '2018-08-16 10:01:26', NULL),
+(26, NULL, 'hnjk', NULL, 'asdfsdf erfdf', 'Et quas ab et magni blanditiis. Aut exercitationem iste in quia et eum.Et quas ab et magni blanditiis. Aut exercitationem iste in quia et eum.Et quas ab et magni blanditiis. Aut exercitationem iste in quia et eum.Et quas ab et magni blanditiis. Aut exercitationem iste in quia et eum.', '1718010453charge.jpg', 'Voluptates corporis quo iEt quas ab et magni blanditiis. Aut exercitationem iste in quia et eum.psam ratione debitis quo et voluptate. Blanditiis quia quis officiis.', '161', 'vel', 'Aut ullam enim est. Eos qui qui non molestias sit. Aperiam ut a ad sit a.', 28, 'ar', 'vel-enim-tenetur-voluptas-ut-facilis', '2018-04-05 13:22:06', '2018-09-23 08:28:31', '2018-09-23 08:28:31'),
 (27, 'bnmn', '546757', 'vgvj f fg', 'sadfds', 'Non voluptatum deleniti qui possimus. Aut placeat et nobis.Non voluptatum deleniti qui possimus. Aut placeat et nobis.', '1877588397banner.jpg', 'Est ut a ut et voluptatum corporis incidunt. Blanditiis culpa velit et numquam ea tempora.Est ut a ut et voluptatum corporis incidunt. Blanditiis culpa velit et numquam ea tempora.', '257', 'aut', 'Nobis blanditiis quos non ipsum. Eveniet debitis molestiae voluptas qui voluptas.', 28, 'ar', 'dfgh dft r t rtyrytr', '2018-04-05 13:22:13', '2018-09-17 12:42:20', NULL),
 (28, NULL, NULL, 'fhjg', 'Miss Phoebe Kuphal PhD', 'Quam est perferendis eius unde consequatur impedit laborum. Voluptas quod qui adipisci sit labore.', '782815497banner - Copy - Copy.jpg', 'Mollitia eaque illo ea. Ad ut nemo praesentium et nihil.', '295', 'vitae', 'Incidunt hic minima aperiam. Maiores sunt sunt non. Hic quia ipsam nesciunt sed.', 28, 'ar', 'eum-quos-in-ipsum-consequatur', '2018-04-05 13:22:21', '2018-09-17 12:42:33', NULL),
 (29, NULL, NULL, NULL, 'Dr. Kendra Rohan', 'Voluptates sed ea magnam sed. Perferendis occaecati enim sapiente distinctio.', '1903937192tree.jpg', 'Soluta est voluptas est dolores quia rerum. Sit iure et amet et maxime nam.', '100', 'quos', 'Quas temporibus voluptatum error ut ea. Nesciunt vel fugiat blanditiis optio reiciendis.', 28, 'ar', 'cupiditate-unde-nam-qui-quia-qui', '2018-04-05 13:22:25', '2018-04-17 06:10:57', NULL),
@@ -250,7 +260,7 @@ INSERT INTO `products` (`id`, `Material`, `Dimentions`, `Colors`, `name`, `body`
 (38, NULL, NULL, NULL, 'asdfds', 'dfgdfg', '1903937192tree.jpg', NULL, NULL, NULL, NULL, 27, NULL, 'dfgdfg', '2018-07-29 09:47:18', '2018-07-29 10:11:06', NULL),
 (39, NULL, NULL, NULL, 'tdyhfg', 'ghgfhfg', '1351747203banner - Copy - Copy.jpg', NULL, NULL, NULL, NULL, 28, NULL, 'fghgfhfgh', '2018-07-31 14:08:23', '2018-09-17 12:43:46', NULL),
 (40, NULL, NULL, NULL, 'sdf', 'dsfsdf', '1903937192tree.jpg', NULL, NULL, NULL, NULL, 28, NULL, 'sfdas', '2018-08-16 07:29:49', '2018-08-16 07:30:39', NULL),
-(41, NULL, 'hnjk', NULL, 'asdfsdf erfdf', 'Et quas ab et magni blanditiis. Aut exercitationem iste in quia et eum.Et quas ab et magni blanditiis. Aut exercitationem iste in quia et eum.Et quas ab et magni blanditiis. Aut exercitationem iste in quia et eum.Et quas ab et magni blanditiis. Aut exercitationem iste in quia et eum.', '1718010453charge.jpg', 'Voluptates corporis quo iEt quas ab et magni blanditiis. Aut exercitationem iste in quia et eum.psam ratione debitis quo et voluptate. Blanditiis quia quis officiis.', '161', 'vel', 'Aut ullam enim est. Eos qui qui non molestias sit. Aperiam ut a ad sit a.', 28, 'ar', 'vel-enim-tenetur-voluptas-ut-facilis', '2018-04-05 13:22:06', '2018-08-16 10:01:26', NULL),
+(41, NULL, 'hnjk', NULL, 'asdfsdf erfdf', 'Et quas ab et magni blanditiis. Aut exercitationem iste in quia et eum.Et quas ab et magni blanditiis. Aut exercitationem iste in quia et eum.Et quas ab et magni blanditiis. Aut exercitationem iste in quia et eum.Et quas ab et magni blanditiis. Aut exercitationem iste in quia et eum.', '1718010453charge.jpg', 'Voluptates corporis quo iEt quas ab et magni blanditiis. Aut exercitationem iste in quia et eum.psam ratione debitis quo et voluptate. Blanditiis quia quis officiis.', '161', 'vel', 'Aut ullam enim est. Eos qui qui non molestias sit. Aperiam ut a ad sit a.', 28, 'ar', 'vel-enim-tenetur-voluptas-ut-facilis', '2018-04-05 13:22:06', '2018-09-23 08:28:38', '2018-09-23 08:28:38'),
 (42, NULL, NULL, NULL, 'sdf', 'dfd', '1903937192tree.jpg', 'sdf', 'sdf', 'fdf', 'sdf', 28, 'ar', 'sdfd', '2018-04-15 07:44:11', '2018-04-17 06:11:33', NULL),
 (43, NULL, 'hnjk', NULL, 'asdfsdf erfdf', 'Et quas ab et magni blanditiis. Aut exercitationem iste in quia et eum.Et quas ab et magni blanditiis. Aut exercitationem iste in quia et eum.Et quas ab et magni blanditiis. Aut exercitationem iste in quia et eum.Et quas ab et magni blanditiis. Aut exercitationem iste in quia et eum.', '1718010453charge.jpg', 'Voluptates corporis quo iEt quas ab et magni blanditiis. Aut exercitationem iste in quia et eum.psam ratione debitis quo et voluptate. Blanditiis quia quis officiis.', '161', 'vel', 'Aut ullam enim est. Eos qui qui non molestias sit. Aperiam ut a ad sit a.', 28, 'ar', 'vel-enim-tenetur-voluptas-ut-facilis', '2018-04-05 13:22:06', '2018-08-16 10:01:26', NULL),
 (44, 'bnmn', NULL, 'bnmnb', 'sadfds', 'Non voluptatum deleniti qui possimus. Aut placeat et nobis.Non voluptatum deleniti qui possimus. Aut placeat et nobis.', '1877588397banner.jpg', 'Est ut a ut et voluptatum corporis incidunt. Blanditiis culpa velit et numquam ea tempora.Est ut a ut et voluptatum corporis incidunt. Blanditiis culpa velit et numquam ea tempora.', '257', 'aut', 'Nobis blanditiis quos non ipsum. Eveniet debitis molestiae voluptas qui voluptas.', 28, 'ar', 'dfgh dft r t rtyrytr', '2018-04-05 13:22:13', '2018-09-17 12:42:20', NULL),
@@ -354,6 +364,33 @@ INSERT INTO `projects_cats` (`id`, `title`, `body`, `status`, `created_at`, `upd
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `requests`
+--
+
+CREATE TABLE `requests` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `title` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `body` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `phone` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `product` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `quantity` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `requests`
+--
+
+INSERT INTO `requests` (`id`, `title`, `body`, `email`, `phone`, `product`, `quantity`, `status`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 'sdfgds', 'gfdg', 'fdgfd', 'dfg', 'dfg', 'dfgdf', 'fdgdf', '2018-09-23 06:57:41', '2018-09-23 06:57:41', NULL);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `site_stings`
 --
 
@@ -388,7 +425,7 @@ INSERT INTO `site_stings` (`id`, `key`, `value`, `lang`, `created_at`, `updated_
 (56, 'About Us2', 'كل اللي بتدور عليه في اي منتج بتشتريه هو \" الجودة - الشكل - السعر المناسب \" احنا حققنالك كل ده في اطقم الراتان و البامبو اللي محتاجهم لـ ( التراس - الفيلا - الشالية - الكافيه ....)\r\n\r\nالجودة : خامات طبيعية نفذت في مصنعنا\r\n\r\nالشكل : نفذنا تصميمات جديدة مناسبة لموضة السنة الجديدة\r\n\r\nالسعر : بنقدملك عروض وأسعار مناسبة', 'ar', '2018-04-05 15:17:11', '2018-04-05 15:17:11', NULL),
 (57, 'Mission', 'Lorem ipsum dolor sit amet consectetur adipisicing. Lorem ipsum dolor sit amet consectetur adipisicing. Lorem ipsum dolor sit amet consectetur adipisicing. Lorem ipsum dolor sit amet consectetur adipisicing.\r\n\r\n', 'ar', '2018-04-05 15:17:12', '2018-07-26 07:23:30', NULL),
 (58, 'Vision', 'Lorem ipsum dolor sit amet consectetur adipisicing. Lorem ipsum dolor sit amet consectetur adipisicing. Lorem ipsum dolor sit amet consectetur adipisicing. Lorem ipsum dolor sit amet consectetur adipisicing.\r\n\r\n', 'ar', '2018-04-05 15:17:12', '2018-04-05 15:17:12', NULL),
-(64, 'What', 'واتس: 01222991785', 'ar', '2018-04-05 15:17:11', '2018-07-29 10:20:47', NULL),
+(64, 'google_maps', '<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13807.37692040264!2d31.29403223201093!3d30.098647209800102!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583fd5fe49af1f%3A0x38b98f00a8c9dcea!2sAl+Qubbaah+Palace%2C+AZ+Zaytoun+Al+Qebleyah%2C+El-Zaytoun%2C+Cairo+Governorate!5e0!3m2!1sen!2seg!4v1537701831996\" width=\"100%\" height=\"450\" frameborder=\"0\" style=\"border:0\" allowfullscreen></iframe>', 'ar', '2018-04-05 15:17:11', '2018-09-23 09:24:11', NULL),
 (65, 'instagram', 'https://www.instagram.com', 'ar', '2018-04-05 15:17:11', '2018-07-29 10:22:04', NULL);
 
 -- --------------------------------------------------------
@@ -573,6 +610,12 @@ ALTER TABLE `projects_cats`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `requests`
+--
+ALTER TABLE `requests`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `site_stings`
 --
 ALTER TABLE `site_stings`
@@ -623,7 +666,7 @@ ALTER TABLE `clients`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `n_e_w_s`
@@ -635,7 +678,7 @@ ALTER TABLE `n_e_w_s`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `products`
@@ -654,6 +697,12 @@ ALTER TABLE `productsphotos`
 --
 ALTER TABLE `projects_cats`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `requests`
+--
+ALTER TABLE `requests`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `site_stings`

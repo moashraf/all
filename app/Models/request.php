@@ -6,22 +6,23 @@ use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
- * Class order
+ * Class request
  * @package App\Models
- * @version September 19, 2018, 11:42 am UTC
+ * @version September 23, 2018, 8:47 am UTC
  *
  * @property string title
  * @property string body
  * @property string email
  * @property string phone
- * @property string status
  * @property string product
+ * @property string quantity
+ * @property string status
  */
-class order extends Model
+class request extends Model
 {
     use SoftDeletes;
 
-    public $table = 'orders';
+    public $table = 'requests';
     
 
     protected $dates = ['deleted_at'];
@@ -30,11 +31,11 @@ class order extends Model
     public $fillable = [
         'title',
         'body',
-        'quantity',
         'email',
         'phone',
-        'status',
-        'product'
+        'product',
+        'quantity',
+        'status'
     ];
 
     /**
@@ -47,8 +48,9 @@ class order extends Model
         'body' => 'string',
         'email' => 'string',
         'phone' => 'string',
-        'status' => 'string',
-        'product' => 'string'
+        'product' => 'string',
+        'quantity' => 'string',
+        'status' => 'string'
     ];
 
     /**
@@ -60,14 +62,8 @@ class order extends Model
         'title' => 'required',
         'body' => 'required',
         'email' => 'required',
-        'phone' => 'required',
-        'status' => 'required',
-        'product' => 'required'
+        'phone' => 'required'
     ];
 
-      public function get_Product()
-{
-	 return $this->hasOne('App\Models\Products','id','product');
-}
-  
+    
 }
