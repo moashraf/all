@@ -17,6 +17,7 @@ Route::resource('/', 'HomeController');
 //Route::post('/form', 'HomeController@form');
 Route::resource('/all_products', 'ProductController');
 Route::get('/services', 'HomeController@services');
+Route::get('/cat/{id}', 'HomeController@cat');
 Route::get('/projects', 'HomeController@projects');
 Route::get('/About', 'HomeController@About');
 Route::get('/Contact', 'HomeController@Contact');

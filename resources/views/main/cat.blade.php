@@ -25,7 +25,7 @@
                      <li class="branch">
                          <img src="{{ URL::to('/')}}/images/figoaroo.png"> 
                         
-                        <a href="{{ URL::to('/cat/').'/'. $Categories_Products_val->id  }}  ">  {{  $Categories_Products_val->title }} </a>
+                        <a href="#">  {{  $Categories_Products_val->title }} </a>
                         <ul>
                            @foreach($Categories_Products_val->children  as $Categories_children)									  
                            <li class="branch 2" > 
@@ -34,17 +34,15 @@
 						                            <img src="{{ URL::to('/')}}/images/figoaroo.png"> 
 												<?php     }?>
 						   
- 						     <a href="{{ URL::to('/cat/').'/'. $Categories_children->id  }}  ">  {{   $Categories_children->title   }} </a>
+						   {{  $Categories_children->title }} 
                               <ul>
                                  @foreach($Categories_children->children  as $Categories_children_val)
 								 
 								 								 
 																					
 																					
-                                 <li class="branch 3" > 
- 						     <a href="{{ URL::to('/cat/').'/'. $Categories_children_val->id  }}  ">  {{  $Categories_children_val->title   }} </a>
-
- 								  <?php  if(   !$Categories_children_val->children->isEmpty() ){   ?>
+                                 <li class="branch 3" >  {{  $Categories_children_val->title }} 
+								  <?php  if(   !$Categories_children_val->children->isEmpty() ){   ?>
 
 								 						                            <img src="{{ URL::to('/')}}/images/figoaroo.png"> 
 
@@ -55,11 +53,9 @@
 													
 
 								  <ul>   
-								  	   @foreach($Categories_children_val->children  as $Categories_children_val_22)
+								  									  @foreach($Categories_children_val->children  as $Categories_children_val_22)
 
-								  <li class="branch 3" > 	 
- 						     <a href="{{ URL::to('/cat/').'/'. $Categories_children_val_22->id  }}  ">  {{  $Categories_children_val_22->title  }} </a>  
-							 </li>
+								  <li class="branch 3" > 	  {{  $Categories_children_val_22->title }}    </li>
 								       @endforeach
 								
 								</ul>

@@ -7,6 +7,7 @@ use App\Models\SERVICE;
 use App\Models\slider;
 use App\Models\projects_cat;
 use App\Models\order;
+use App\Models\Products;
 
 use Illuminate\Http\Request;
 
@@ -25,7 +26,27 @@ class HomeController extends Controller
        return view('main.thankspage');
     }
 
+public function cat($id)
+    {
+	
+	 $Categories = Categories_Products::where('id' ,'=', $id)->get();
+	  if(  !$Categories->isEmpty()   ){  
+  $Products = Products::where('cat_id','=',$Categories[0]['id'])->paginate(20);
+  	 $Categories_Products = Categories_Products::limit(50)->get();
 
+        return view('main.cat', 
+            [
+             'Categories_Products' => $Categories_Products, 
+               'Products' => $Products, 
+             ]);
+  // dd(    $Categories_Products[0]['id']); 
+   
+   }else{
+	   
+	   
+	    return redirect('/');
+		
+	}}
 	
 	public function Cart_information_save( request $request)
     {

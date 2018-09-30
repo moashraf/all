@@ -1,9 +1,9 @@
- -- phpMyAdmin SQL Dump
+-- phpMyAdmin SQL Dump
 -- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 23, 2018 at 01:41 PM
+-- Generation Time: Sep 30, 2018 at 01:06 PM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 7.1.13
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `all`
+-- Database: `helow`
 --
 
 -- --------------------------------------------------------
@@ -46,15 +46,24 @@ CREATE TABLE `categories__products` (
 --
 
 INSERT INTO `categories__products` (`id`, `parentid`, `title`, `slug`, `lang`, `single_photo`, `body`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(26, 0, 'Prof. Gina Brakus', 'voluptatem-deserunt-libero-debitis-fugit-vel-veniam', 'ar', '881928967banner - Copy - Copy.jpg', 'Necessitatibus soluta itaque velit. Doloribus aliquam ad nihil voluptatem ut at.', '2018-04-05 13:22:55', '2018-09-20 10:40:15', NULL),
 (27, 26, 'sdfsdf', 'nihil-iste-voluptatem-sequi-dolorum-architecto-et-quo-ullam', 'ar', 'c2.jpg', 'sdfg', '2018-04-05 13:22:57', '2018-07-29 09:52:44', NULL),
-(32, 0, 'Prof. Gina Brakus', 'voluptatem-deserunt-libero-debitis-fugit-vel-veniam', 'ar', 'c2.jpg', 'Necessitatibus soluta itaque velit. Doloribus aliquam ad nihil voluptatem ut at.', '2018-04-05 13:22:55', '2018-07-25 13:28:19', NULL),
-(33, 26, 'sdfsdf', 'nihil-iste-voluptatem-sequi-dolorum-architecto-et-quo-ullam', 'ar', 'c2.jpg', 'sdfg', '2018-04-05 13:22:57', '2018-07-29 09:52:44', NULL),
-(35, 33, 'بامبو', 'dfgdf', 'ar', '14330882924.jpg', 'dfgdfg', '2018-04-15 06:14:09', '2018-07-25 13:27:29', NULL),
-(36, 26, 'راتان', 'sdrfdgsfdsf', 'ar', '20375652614.jpg', 'dfgdf', '2018-04-15 06:14:45', '2018-07-25 13:27:53', NULL),
-(37, 0, 'خارجي', 'ertertre', NULL, '17169723logo-chemistry (1).png', 'ertert', '2018-07-29 09:50:27', '2018-07-29 09:53:17', NULL),
+(28, 0, 'Prof. Gina Brakus', 'voluptatem-deserunt-libero-debitis-fugit-vel-veniam', 'ar', '881928967banner - Copy - Copy.jpg', 'Necessitatibus soluta itaque velit. Doloribus aliquam ad nihil voluptatem ut at.', '2018-04-05 13:22:55', '2018-09-20 10:40:15', NULL),
+(32, 28, 'Prof. Gina Brakus', 'voluptatem-deserunt-libero-debitis-fugit-vel-veniam', 'ar', 'c2.jpg', 'Necessitatibus soluta itaque velit. Doloribus aliquam ad nihil voluptatem ut at.', '2018-04-05 13:22:55', '2018-07-25 13:28:19', NULL),
+(33, 28, 'sdfsdf', 'nihil-iste-voluptatem-sequi-dolorum-architecto-et-quo-ullam', 'ar', 'c2.jpg', 'sdfg', '2018-04-05 13:22:57', '2018-07-29 09:52:44', NULL),
+(35, 33, 'Sdftgf', 'dfgdf', 'ar', '14330882924.jpg', 'dfgdfg', '2018-04-15 06:14:09', '2018-07-25 13:27:29', NULL),
+(36, 26, 'veniam veniam', 'sdrfdgsfdsf', 'ar', '20375652614.jpg', 'dfgdf', '2018-04-15 06:14:45', '2018-07-25 13:27:53', NULL),
+(37, 0, 'ewtewr', 'ertertre', NULL, '17169723logo-chemistry (1).png', 'ertert', '2018-07-29 09:50:27', '2018-07-29 09:53:17', NULL),
 (38, 33, 'dfhg', 'gfhfg', NULL, '44058879802.png', 'fghgf', '2018-09-20 10:46:10', '2018-09-20 10:46:10', NULL),
-(39, 33, 'ggg', 'ggg', NULL, '356436394banner - Copy - Copy.jpg', 'gggg', '2018-09-20 10:46:46', '2018-09-20 10:46:46', NULL);
+(39, 33, 'ggg22', 'ggg', NULL, '356436394banner - Copy - Copy.jpg', 'gggg', '2018-09-20 10:46:46', '2018-09-20 10:46:46', NULL),
+(40, 0, 'Prof. Gina Brakus', 'voluptatem-deserunt-libero-debitis-fugit-vel-veniam', 'ar', '881928967banner - Copy - Copy.jpg', 'Necessitatibus soluta itaque velit. Doloribus aliquam ad nihil voluptatem ut at.', '2018-04-05 13:22:55', '2018-09-20 10:40:15', NULL),
+(41, 0, 'Prof. Gina Brakus', 'voluptatem-deserunt-libero-debitis-fugit-vel-veniam', 'ar', 'c2.jpg', 'Necessitatibus soluta itaque velit. Doloribus aliquam ad nihil voluptatem ut at.', '2018-04-05 13:22:55', '2018-07-25 13:28:19', NULL),
+(42, 43, 'wetrew', 'ertertre', NULL, '17169723logo-chemistry (1).png', 'ertert', '2018-07-29 09:50:27', '2018-07-29 09:53:17', NULL),
+(43, 36, 'sdfsdf', 'nihil-iste-voluptatem-sequi-dolorum-architecto-et-quo-ullam', 'ar', 'c2.jpg', 'sdfg', '2018-04-05 13:22:57', '2018-07-29 09:52:44', NULL),
+(44, 26, 'sdfsdf', 'nihil-iste-voluptatem-sequi-dolorum-architecto-et-quo-ullam', 'ar', 'c2.jpg', 'sdfg', '2018-04-05 13:22:57', '2018-07-29 09:52:44', NULL),
+(45, 26, 'veniam', 'sdrfdgsfdsf', 'ar', '20375652614.jpg', 'dfgdf', '2018-04-15 06:14:45', '2018-07-25 13:27:53', NULL),
+(46, 35, 'degfdgh rw tr', 'dfgdf', 'ar', '14330882924.jpg', 'dfgdfg', '2018-04-15 06:14:09', '2018-07-25 13:27:29', NULL),
+(47, 35, 'dfhg5481265', 'gfhfg', NULL, '44058879802.png', 'fghgf', '2018-09-20 10:46:10', '2018-09-20 10:46:10', NULL),
+(48, 33, 'ggg', 'ggg', NULL, '356436394banner - Copy - Copy.jpg', 'gggg', '2018-09-20 10:46:46', '2018-09-20 10:46:46', NULL);
 
 -- --------------------------------------------------------
 
@@ -654,7 +663,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `categories__products`
 --
 ALTER TABLE `categories__products`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
 -- AUTO_INCREMENT for table `clients`
