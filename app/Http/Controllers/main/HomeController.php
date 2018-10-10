@@ -26,6 +26,12 @@ class HomeController extends Controller
        return view('main.thankspage');
     }
 
+	
+	 public function cart()
+    {
+     
+       return view('main.cart');
+    }
 public function cat($id)
     {
 	

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
-
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js">
+</script>
 <head>
   <title>  {{ site_settings("Web site name")  }} </title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -326,18 +327,20 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-
-    <!-- /js -->
+ 
+  <!--// end-smoth-scrolling
   
-  <!--// end-smoth-scrolling -->
-  <!-- jQuery-Photo-filter-lightbox-Gallery-plugin -->
-  <!--// end-smoth-scrolling -->
+  
+  
+  
   <script src="{{ asset('js/jquery-1.7.2.js') }}"></script>
   <script src="{{ asset('js/jquery.quicksand.js') }}"></script>
   <script src="{{ asset('js/pretty-script.js') }}"></script>
   <script src="{{ asset('js/jquery.prettyPhoto.js') }}"></script>
-  <!-- //jQuery-Photo-filter-lightbox-Gallery-plugin -->
-  <!-- /js -->
+  
+  
+   -->
+ 
   <script src="{{ asset('js/bootstrap.js') }}"></script>
   <!-- //js -->
 </body>

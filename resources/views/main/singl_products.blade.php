@@ -1,11 +1,14 @@
-@extends('main.master') 
+<?php
+// Start the session
+session_start();
+?>@extends('main.master') 
 @section('content')
-  
+
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
             <a href="{{ URL::to('/')}}">Home</a>
         </li>
-        <li class="breadcrumb-item active">Product Details</li>
+        <li class="breadcrumb-item active">  {{  $Products->name }}  </li>
     </ol>
 
     <!-- //breadcrumb -->
@@ -53,8 +56,21 @@
                                        Add to Cart
                                        <span class="badge badge-primary badge-pill">
                                          <a href=""></a>
-                                       </span>
-									     <button type="button" class="btn btn-  btn-lg" data-toggle="modal" data-target="#myModal"> <img src="{{ URL::to('/')}}/images/cart.png">    </button>
+                                       </span> 
+									     <button   onclick="myFunction(1)"  type="button" class="btn btn-  btn-lg"   > 
+										 <img src="{{ URL::to('/')}}/images/cart.png">    </button>
+										 <script type='text/javascript'>
+										 
+										 function myFunction() {   
+										<?php
+										$value="$Products->id";
+									//	Session::put('Products', $value); 
+$_SESSION["favcolor"][$Products->id]=$value ;
+
+										?>
+														alert( "<?php  echo (     '    Add to Cart    '. $Products->name ); ?>"   ); }
+												
+											</script>
 
                                    </li>
                                 </ul>

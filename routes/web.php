@@ -20,6 +20,7 @@ Route::get('/services', 'HomeController@services');
 Route::get('/cat/{id}', 'HomeController@cat');
 Route::get('/projects', 'HomeController@projects');
 Route::get('/About', 'HomeController@About');
+Route::get('/cart', 'HomeController@cart');
 Route::get('/Contact', 'HomeController@Contact');
 Route::post('/Cart_information_save', 'HomeController@Cart_information_save')->name('Cart_information_save');
 Route::get('/done', 'HomeController@done')->name('done');
